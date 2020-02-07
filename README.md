@@ -18,6 +18,8 @@ Example:
 To check if two lines collide, you must call `checkCollisionBetweenLines()` method. It takes two lines, so an example would be:
 `checkCollisionBetweenLines(line1, line2)`
 
+Function returns `true` (if lines intersect) or `false` (if they don't).
+
 ## Polygons
 
 Polygons have a similar format. They are again a 2D array: {{x1, y1}, {x2, y2}, {x3, y3}, ... {xn, yn}}
@@ -29,6 +31,8 @@ To check if two polygons are colliding, you must call `checkCollisionBetweenPoly
 
 An Example:
 `checkCollisionBetweenPolygons(polygon1, polygon2)`
+
+Function returns `true` (if polygons are colliding) or `false` (if they aren't).
 
 **If you want to check if a polygon and a line collide, you just treat a line as a polygon and insert it instead of one of the polygons, and it works**
 
