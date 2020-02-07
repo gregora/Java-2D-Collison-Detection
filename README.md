@@ -35,7 +35,8 @@ An Example:
 ## A working example (Example.java)
 
 
-```public class Example {
+```
+public class Example {
 
   public static void main(String[] args){
 
@@ -49,7 +50,8 @@ An Example:
 
   }
 
-}```
+}
+```
 
 This is a simple program that checks if two triangles are colliding. And they are:
 
