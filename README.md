@@ -1,6 +1,6 @@
 # Java 2D Collison Detection
 
-** A simple class used to detect a collision between any two lines or polygons**
+**A simple class used to detect a collision between any two lines or polygons**
 
 ## Installation
 
@@ -30,12 +30,12 @@ To check if two polygons are colliding, you must call `checkCollisionBetweenPoly
 An Example:
 `checkCollisionBetweenPolygons(polygon1, polygon2)`
 
-** If you want to check if a polygon and a line collide, you just treat a line as a polygon and insert it instead of one of the polygons, and it works **
+**If you want to check if a polygon and a line collide, you just treat a line as a polygon and insert it instead of one of the polygons, and it works**
 
 ## A working example (Example.java)
 
 
-`public class Example {
+```public class Example {
 
   public static void main(String[] args){
 
@@ -49,10 +49,10 @@ An Example:
 
   }
 
-}`
+}```
 
 This is a simple program that checks if two triangles are colliding. And they are:
 
-![Two colliding triangles](https://imgur.com/a/ia47SUP)
+![Two colliding triangles](https://i.imgur.com/NgjUl8D.png)
 
 So the output is: `true`
