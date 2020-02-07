@@ -88,9 +88,9 @@ public class CollisionDetection {
       float i = (n2 - n1) / (k1 - k2);
 
       //check if x coordinate of intersection point is within limits of both lines
-      if(i > Math.min(x1, x2) && i < Math.max(x1, x2)){
+      if(i >= Math.min(x1, x2) && i <= Math.max(x1, x2)){
 
-        if(i > Math.min(x3, x4) && i < Math.max(x3, x4)){
+        if(i >= Math.min(x3, x4) && i <= Math.max(x3, x4)){
 
           return true;
 
