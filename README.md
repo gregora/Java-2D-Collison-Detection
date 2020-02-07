@@ -10,7 +10,7 @@ Don't forget to compile it before using it.
 
 ## Lines
 
-Lines have a very simple format. They are a two by two array of coordinates: {{x1, x2}, {x2, y2}}.
+Lines have a very simple format. They are a two by two array of coordinates: {{x<sub>1</sub>, x<sub>2</sub>}, {x<sub>2</sub>, y<sub>2</sub>}}.
 
 Example:
 `float [][] line = {{0, 0}, {100, 100}}`
@@ -22,7 +22,7 @@ Function returns `true` (if lines intersect) or `false` (if they don't).
 
 ## Polygons
 
-Polygons have a similar format. They are again a 2D array: {{x1, y1}, {x2, y2}, {x3, y3}, ... {xn, yn}}
+Polygons have a similar format. They are again a 2D array: {{x1, y1}, {x<sub>2</sub>, y<sub>2</sub>}, {x<sub>3</sub>, y<sub>3</sub>}, ... {x<sub>n</sub>, y<sub>n</sub>}}
 
 Example (a triangle):
 `float [][] polygon1 = {{0, 0}, {100, 100}, {-100, 100}}`
