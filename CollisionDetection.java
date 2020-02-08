@@ -220,5 +220,30 @@ public class CollisionDetection {
 
   }
 
+  public static boolean checkCollisionBetweenCircles(float[] circle1, float[] circle2){
+    ///input shold be checkCollisionBetweenCircles({{x1, y2, radius1}, {x2, y2, radius2})
+
+    //circle 1
+    float x1 = circle1[0];
+    float y1 = circle1[1];
+    float r1 = circle1[2];
+
+    //circle 2
+    float x2 = circle2[0];
+    float y2 = circle2[1];
+    float r2 = circle2[2];
+
+    if(Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2)) <= r1 + r2){
+
+      return true;
+
+    }else{
+
+      return false;
+
+    }
+
+  }
+
 
 }
