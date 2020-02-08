@@ -2,12 +2,6 @@ public class CollisionDetection {
 
   public static void main(String[] args){
 
-    float [][] line = {{0, 1000}, {200, -1000}};
-
-    float [][] polygon = {{0, 0}, {0, 100}, {100, 100}, {100, 0}};
-    float [] circle = {0, 0, 100};
-    //System.out.println(checkCollisionBetweenPolygonAndCircle(polygon, circle));
-    System.out.println(checkCollisionBetweenLineAndCircle(line, circle));
   }
 
 
@@ -146,13 +140,45 @@ public class CollisionDetection {
     float x4 = line2[1][0];
     float y4 = line2[1][1];
 
-    //avoid dividing by  0
-    if(x1 == x2){
-      x2 = x1 + (float) 0.000000001;
+    if(x1 == x2 && x3 == x4){
+
+      return false; //if two lines sit on top of each other this is not a collison
+
     }
 
+    //avoid dividing by  0
+    if(x1 == x2){
+      float k2 = (y4 - y3) / (x4 - x3);
+      float n2 = y3 - x3 * k2;
+
+      float y = k2 * x1 + n2; //calculate y coordinate of intersecton
+
+      if(Math.min(y1, y2) < y && Math.max(y1, y2) > y){
+        if(Math.min(x3, x4) < x1 && Math.max(x3, x4) > x1){
+          return true;
+        }
+      }
+
+      return false;
+
+    }
+
+
+    //avoid dividing by  0
     if(x3 == x4){
-      x4 = x3 + (float) 0.000000001;
+      float k1 = (y2 - y1) / (x2 - x1);
+      float n1 = y1 - x1 * k1;
+
+      float y = k1 * x3 + n1; //calculate y coordinate of intersecton
+
+      if(Math.min(y3, y4) < y && Math.max(y3, y4) > y){
+        if(Math.min(x1, x2) < x3 && Math.max(x1, x2) > x3){
+          return true;
+        }
+      }
+
+      return false;
+
     }
 
     //get linear equasion info
@@ -161,8 +187,6 @@ public class CollisionDetection {
 
     float n1 = y1 - x1 * k1;
     float n2 = y3 - x3 * k2;
-
-
 
     if(k1 == k2){
       //if two lines are parallel it is considered not collison
