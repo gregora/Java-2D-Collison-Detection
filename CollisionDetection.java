@@ -81,15 +81,22 @@ public class CollisionDetection {
 
     //if one of the points is inside circle, return true
     if(Math.sqrt(Math.pow(x1 - cx, 2) + Math.pow(y1 - cy, 2)) <= cr || Math.sqrt(Math.pow(x2 - cx, 2) + Math.pow(y2 - cy, 2)) <= cr){
-      System.out.println("Found one point  in circle");
+
       return true;
 
     }
 
-
     //avoid dividing by  0
     if(x1 == x2){
-      x2 = x1 + (float) 0.000000001;
+      if(Math.min(y1, y2) <= cy && Math.max(y1, y2) >= cy){
+
+        if(Math.abs(x1 - cx) <= cr){
+          return true;
+        }
+
+      }
+      return false;
+
     }
 
     float lk = (y2 - y1) / (x2 - x1); //  k = Δy / Δx
@@ -153,8 +160,8 @@ public class CollisionDetection {
 
       float y = k2 * x1 + n2; //calculate y coordinate of intersecton
 
-      if(Math.min(y1, y2) < y && Math.max(y1, y2) > y){
-        if(Math.min(x3, x4) < x1 && Math.max(x3, x4) > x1){
+      if(Math.min(y1, y2) <= y && Math.max(y1, y2) >= y){
+        if(Math.min(x3, x4) <= x1 && Math.max(x3, x4) >= x1){
           return true;
         }
       }
