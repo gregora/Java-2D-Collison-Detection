@@ -8,33 +8,19 @@ To install this collision detection algorithm, just download CollisionDetection.
 
 Don't forget to compile it before using it.
 
-## Lines
+## List of formats of geometrical shapes
 
-Lines have a very simple format. They are a two by two array of coordinates: {{x<sub>1</sub>, x<sub>2</sub>}, {x<sub>2</sub>, y<sub>2</sub>}}.
+* Line: `float[][] = {{x1, y1}, {x2, y2}}`;
+* Circle: `float[] = {x, y, r}`;
+* Polygon: `float[][] = {{x1, y1}, {x2, y2}, {x3, y3}, ... {xn, yn}}`;
 
-Example:
-`float [][] line = {{0, 0}, {100, 100}}`
+## A list of all functions
 
-To check if two lines collide, you must call `checkCollisionBetweenLines()` method. It takes two lines, so an example would be:
-`checkCollisionBetweenLines(line1, line2)`
-
-Function returns `true` (if lines intersect) or `false` (if they don't).
-
-## Polygons
-
-Polygons have a similar format. They are again a 2D array: {{x<sub>1</sub>, y<sub>1</sub>}, {x<sub>2</sub>, y<sub>2</sub>}, {x<sub>3</sub>, y<sub>3</sub>}, ... {x<sub>n</sub>, y<sub>n</sub>}}
-
-Example (a triangle):
-`float [][] polygon1 = {{0, 0}, {100, 100}, {-100, 100}}`
-
-To check if two polygons are colliding, you must call `checkCollisionBetweenPolygons()` method
-
-An Example:
-`checkCollisionBetweenPolygons(polygon1, polygon2)`
-
-Function returns `true` (if polygons are colliding) or `false` (if they aren't).
-
-**If you want to check if a polygon and a line collide, you just treat a line as a polygon and insert it instead of one of the polygons, and it works**
+* `checkCollisionBetweenLines(float[][] line1, float[][] line2);`
+* `checkCollisionBetweenLineAndCircle(float[][] line1, float[] circle);`
+* `checkCollisionBetweenPolygons(float[][] polygon1, float[][] polygon2);` **If you want to check if a polygon and a line collide, you just treat a line as a polygon and insert it instead of one of the polygons, and it works**
+* `checkCollisionBetweenCircles(float[] circle1, float[] circle2);`
+* `checkCollisionBetweenPolygonAndCircle(float[][] polygon, float[] circle);`
 
 ## A working example (Example.java)
 
