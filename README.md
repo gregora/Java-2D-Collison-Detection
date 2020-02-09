@@ -10,9 +10,9 @@ Don't forget to compile it before using it.
 
 ## List of formats of geometrical shapes
 
-* Line: `float[][] = {{x1, y1}, {x2, y2}};`
-* Circle: `float[] = {x, y, r};`
-* Polygon: `float[][] = {{x1, y1}, {x2, y2}, {x3, y3}, ... {xn, yn}};`
+* Line: `float[][] line = {{x1, y1}, {x2, y2}};`
+* Circle: `float[] circle = {x, y, r};`
+* Polygon: `float[][] polygon = {{x1, y1}, {x2, y2}, {x3, y3}, ... {xn, yn}};`
 
 ## A list of all functions
 
